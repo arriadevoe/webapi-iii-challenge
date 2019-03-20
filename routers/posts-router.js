@@ -5,7 +5,7 @@ const postsDb = require("../data/helpers/postDb.js");
 
 const router = express.Router();
 
-// Returns an array of all the s objects contained in the database.
+// Returns an array of all the post objects contained in the database.
 router.get("/", async (req, res) => {
   try {
     const users = await postsDb.get();

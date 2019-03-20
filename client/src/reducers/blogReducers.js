@@ -1,5 +1,5 @@
 import {
-  GET_POSTS,
+  GET_ALL_POSTS,
   SUCCESS,
   FAILURE,
 } from '../actions/actions';
@@ -12,7 +12,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch(action.type) {
-    case GET_POSTS:
+    case GET_ALL_POSTS:
       return {
         ...state,
         gettingPosts: true,

@@ -72,6 +72,17 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Returns an array of all the users contained in the database.
+// router.get("/", async (req, res) => {
+//   try {
+//     const users = await usersDb.get();
+//     res.status(200).json(users);
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({ error: "The posts could not be retrieved." });
+//   }
+// });
+
 // // Endpoints: Handle all URLs beginning with /api/posts
 // // Creates a post using the information sent inside the `request body`.
 // router.post("/", async (req, res) => {
