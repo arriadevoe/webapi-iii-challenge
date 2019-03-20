@@ -5,6 +5,25 @@ const usersDb = require("../data/helpers/userDb.js");
 
 const router = express.Router();
 
+// // Creates a new user.
+router.post("/", async (req, res) => {
+  try {
+    if (!req.body.name) {
+      res.status(400).json({
+        errorMessage: "Please provide the new user's name."
+      });
+    } else {
+      const newUser = await usersDb.insert(req.body);
+      res.status(201).json(newUser);
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      error: "There was an error while saving the post to the database."
+    });
+  }
+});
+
 // Retrieve the list of `posts` for a `user`.
 router.get("/:id", async (req, res) => {
   try {
