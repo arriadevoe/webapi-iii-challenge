@@ -3,12 +3,14 @@ const express = require('express');
 const usersRouter = require('./routers/users-router.js');
 const postsRouter = require('./routers/posts-router.js');
 
+const helmet = require('helmet');
 const cors = require('cors');
 
 const server = express();
 
-// BUILT-IN MIDDLEWARE
+// BUILT-IN MIDDLEWARE (WITH HELMET SECURITY)
 server.use(express.json());
+server.use(helmet());
 
 // CUSTOM MIDDLEWARE (LOGGER)
 server.use(function (req, res, next) {
