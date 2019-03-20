@@ -1,36 +1,14 @@
 const express = require("express");
 
 // Custom imports
-const usersDb = require("../data/helpers/userDb.js");
+const postsDb = require("../data/helpers/postDb.js");
 
 const router = express.Router();
 
-// Retrieve the list of `posts` for a `user`.
-router.get("/:id", async (req, res) => {
-  try {
-    const posts = await usersDb.getUserPosts(req.params.id); // returns posts found for user
-    if (!posts.length) {
-      res
-        .status(404)
-        .json({
-          message:
-            "The post with the specified ID does not exist or this user has no posts."
-        });
-    } else {
-      res.status(200).json(posts);
-    }
-  } catch (error) {
-    console.log(error);
-    res
-      .status(500)
-      .json({ error: "The posts information could not be retrieved." });
-  }
-});
-
-// Returns an array of all the users contained in the database.
+// Returns an array of all the s objects contained in the database.
 router.get("/", async (req, res) => {
   try {
-    const users = await usersDb.get();
+    const users = await postsDb.get();
     res.status(200).json(users);
   } catch (error) {
     console.log(error);
