@@ -6,6 +6,28 @@ const postDb = require("../data/helpers/postDb.js");
 
 const router = express.Router();
 
+// Retrieve the list of `posts` for a `user`.
+router.get("/:id", async (req, res) => {
+  try {
+    const posts = await userDb.getUserPosts(req.params.id); // returns posts found for user
+    if (!posts.length) {
+      res
+        .status(404)
+        .json({
+          message:
+            "The post with the specified ID does not exist or this user has no posts."
+        });
+    } else {
+      res.status(200).json(posts);
+    }
+  } catch (error) {
+    console.log(error);
+    res
+      .status(500)
+      .json({ error: "The posts information could not be retrieved." });
+  }
+});
+
 // // Endpoints: Handle all URLs beginning with /api/posts
 // // Creates a post using the information sent inside the `request body`.
 // router.post("/", async (req, res) => {
