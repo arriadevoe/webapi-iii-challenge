@@ -5,7 +5,22 @@ const usersDb = require("../data/helpers/userDb.js");
 
 const router = express.Router();
 
-// // Creates a new user.
+// CUSTOM MIDDLEWARE (CAPITALIZE IF STRING)
+router.use(function(req, res, next) {
+  if (req.method === 'POST' && req.url === '/') {
+    let upperCaseArray = []
+
+    for (name of req.body.name.split(' ')) {
+      upperCaseArray.push(name.charAt(0).toUpperCase() + name.slice(1));
+    }
+
+    req.body.name = upperCaseArray.join(' ')
+  }
+
+  next();
+});
+
+// Creates a new user.
 router.post("/", async (req, res) => {
   try {
     if (!req.body.name) {
