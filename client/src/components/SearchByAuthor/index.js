@@ -7,7 +7,9 @@ const SearchByAuthor = props => {
     setInputState(e.target.value);
   };
 
-  const filterByAuthor = () => {
+  const filterByAuthor = e => {
+    e.preventDefault();
+    
     // this.props.getUserPosts();
     alert(currentInputState);
 
