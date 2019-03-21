@@ -1,5 +1,5 @@
 .posts {
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -10,4 +10,8 @@
   border: 5px groove white;
   margin-bottom: 25px;
   padding: 0 20px;
+}
+
+.post-author {
+  font-weight: bold;
 }

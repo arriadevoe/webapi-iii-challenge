@@ -11,12 +11,19 @@ class Posts extends Component {
   }
 
   render() {
+    if (this.props.gettingPosts || this.props.gettingUsers) {
+      return <p>loading</p>
+    }
     return (
       <div className="posts">
         {this.props.posts.map(post => {
           return (
             <div key={post.id} className="post">
-              <p>{post.user_id}</p>
+              <p className="post-author">
+                {
+                  this.props.userList.filter(user => user.id === post.user_id)[0].name
+                }
+              </p>
               <p>{post.text}</p>
             </div>
           );
@@ -29,7 +36,9 @@ class Posts extends Component {
 const mapStateToProps = state => {
   return {
     posts: state.posts,
+    userList: state.userList,
     gettingPosts: state.gettingPosts,
+    gettingUsers: state.gettingUsers,
     error: state.error
   };
 };
