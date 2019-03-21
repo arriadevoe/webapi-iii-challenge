@@ -11,14 +11,16 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-            <div className="title">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                WEB API II Challenge - Blog with Node.js
-              </p>
-            </div>
-          <Posts />
-          <UserList />
+          <div className="title">
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>
+              WEB API III Challenge - Blog with Node.js
+            </p>
+          </div>
+          <div className="component-container">
+            <Posts />
+            <UserList />
+          </div>
         </header>
       </div>
     );

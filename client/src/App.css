@@ -26,6 +26,11 @@
   font-weight: bold;
 }
 
+.component-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .App-link {
   color: #61dafb;
 }
