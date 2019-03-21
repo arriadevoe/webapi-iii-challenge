@@ -5,13 +5,21 @@
 }
 
 .post {
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
   border: 2px solid white;
   box-shadow: 5px 5px 0 gray;
-  margin-bottom: 25px;
-  padding: 0 20px;
+  margin-bottom: 30px;
+  padding: 0 40px;
 }
 
-.post-author {
+.quote {
+  margin-bottom: 0;
+}
+
+.author {
   font-weight: bold;
+  margin-top: 10px;
 }

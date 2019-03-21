@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./SearchByAuthor.css"
+
 const SearchByAuthor = props => {
   const [currentInputState, setInputState] = useState("");
 
@@ -22,9 +24,9 @@ const SearchByAuthor = props => {
         type="text"
         value={currentInputState}
         onChange={handleInputChange}
-        placeholder="...Search by Author"
+        placeholder="...Search by Character Name"
       />
-      <button onClick={filterByAuthor}> Submit </button>
+      <button onClick={filterByAuthor}> SEARCH </button>
     </form>
   );
 };

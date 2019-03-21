@@ -1,3 +1,29 @@
 form {
   display: flex;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 300px;
+  padding: 5px 0;
+  padding-left: 10px;
+  margin-right: 15px;
+  border: none;
+  font-size: calc(8px + 1vmin);
+  border-radius: 2px;
+  background: white;
+}
+
+button {
+  background: darkcyan;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 0 20px;
+  transition: 0.15s;
+}
+
+button:hover {
+  background: darkslateblue;
 }

@@ -16,7 +16,7 @@
 .title {
   display: flex;
   align-items: center;
-  font-size: calc(14px + 2vmin);
+  font-size: calc(13px + 2vmin);
   font-weight: bold;
   height: 100px;
   margin-top: 60px;
@@ -36,18 +36,18 @@
 }
 
 .react-logo {
-  height: 10vmin;
+  height: 9vmin;
   pointer-events: none;
 }
 
 .redux-logo {
-  height: 8vmin;
+  height: 7vmin;
   pointer-events: none;
-  margin-right: 25px;
+  margin-right: 20px;
 }
 
 .nodejs-logo {
-  height: 9vmin;
+  height: 8vmin;
   pointer-events: none;
 }
 

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getAllPosts, getAllUsers } from "../../actions/actions";
 
 import "./Posts.css";
-import Loader from 'react-loader-spinner';
+import Loader from "react-loader-spinner";
 
 class Posts extends Component {
   componentDidMount() {
@@ -14,19 +14,21 @@ class Posts extends Component {
 
   render() {
     if (this.props.gettingPosts || this.props.gettingUsers) {
-      return <Loader type="Puff" color="white" height={80} width={80} />
+      return <Loader type="Puff" color="white" height={80} width={80} />;
     }
     return (
       <div className="posts">
         {this.props.posts.map(post => {
           return (
             <div key={post.id} className="post">
-              <p className="post-author">
-                {
-                  this.props.userList.filter(user => user.id === post.user_id)[0].name
-                }
+              <p className="quote">{`"${post.text}"`}</p>
+              <p className="author">
+                {`-${
+                  this.props.userList.filter(
+                    user => user.id === post.user_id
+                  )[0].name
+                }`}
               </p>
-              <p>{post.text}</p>
             </div>
           );
         })}
