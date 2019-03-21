@@ -6,7 +6,8 @@
 
 .post {
   width: 40%;
-  border: 5px groove white;
+  border: 2px solid white;
+  box-shadow: 5px 5px 0 gray;
   margin-bottom: 25px;
   padding: 0 20px;
 }
