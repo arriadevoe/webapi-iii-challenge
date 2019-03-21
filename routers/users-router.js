@@ -7,7 +7,7 @@ const router = express.Router();
 
 // CUSTOM MIDDLEWARE (CAPITALIZE IF STRING)
 router.use(function(req, res, next) {
-  if (req.method === 'POST' && req.url === '/') {
+  if ((req.method === 'POST' || req.method === 'PUT') && req.body.name) {
     let upperCaseArray = []
 
     for (name of req.body.name.split(' ')) {
@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
 });
 
 // Retrieve the list of `posts` for a `user`.
-router.get("/:id", async (req, res) => {
+router.get("/posts/:id", async (req, res) => {
   try {
     const posts = await usersDb.getUserPosts(req.params.id); // returns posts found for user
     if (!posts.length) {
@@ -72,16 +72,24 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Returns an array of all the users contained in the database.
-// router.get("/", async (req, res) => {
-//   try {
-//     const users = await usersDb.get();
-//     res.status(200).json(users);
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).json({ error: "The posts could not be retrieved." });
-//   }
-// });
+// Returns a specific user by ID.
+router.get("/:id", async (req, res) => {
+  try {
+    const user = await usersDb.getById(req.params.id);
+    if (!(typeof user === 'object')) {
+      res
+        .status(404)
+        .json({ message: "The post with the specified ID does not exist." });
+    } else {
+      res.status(200).json(user);
+    }
+  } catch (error) {
+    console.log(error);
+    res
+      .status(500)
+      .json({ error: "The posts information could not be retrieved." });
+  }
+});
 
 // // Endpoints: Handle all URLs beginning with /api/posts
 // // Creates a post using the information sent inside the `request body`.
