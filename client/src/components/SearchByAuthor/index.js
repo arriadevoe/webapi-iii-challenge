@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
-import { getPostsByUser } from "../../actions/actions";
+import { getPostsByUser, getAllPosts } from "../../actions/actions";
 
 import "./SearchByAuthor.css";
 
@@ -34,6 +34,12 @@ const SearchByAuthor = props => {
       alert("Don't leave this blank");
     }
   };
+  
+  const viewAll = e => {
+    e.preventDefault();
+
+    props.getAllPosts();
+  };
 
   return (
     <form>
@@ -43,7 +49,8 @@ const SearchByAuthor = props => {
         onChange={handleInputChange}
         placeholder="...Search by Character Name"
       />
-      <button onClick={filterByAuthor}> SEARCH </button>
+      <button type="submit" onClick={filterByAuthor}> SEARCH </button>
+      <button onClick={viewAll}> SELECT ALL </button>
     </form>
   );
 };
@@ -57,5 +64,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getPostsByUser }
+  { getPostsByUser, getAllPosts }
 )(SearchByAuthor);
