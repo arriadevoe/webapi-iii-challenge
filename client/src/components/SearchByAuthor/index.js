@@ -50,7 +50,7 @@ const SearchByAuthor = props => {
         placeholder="...Search by Character Name"
       />
       <button type="submit" onClick={filterByAuthor}> SEARCH </button>
-      <button onClick={viewAll}> SELECT ALL </button>
+      <button onClick={viewAll}> VIEW ALL </button>
     </form>
   );
 };

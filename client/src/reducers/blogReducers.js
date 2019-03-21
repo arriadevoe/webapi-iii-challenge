@@ -2,9 +2,11 @@ import {
   GET_ALL_POSTS,
   GET_ALL_USERS,
   GET_POSTS_BY_USER,
+  CREATE_NEW_POST,
   SUCCESS_GET_ALL_POSTS,
   SUCCESS_GET_ALL_USERS,
   SUCCESS_GET_POSTS_BY_USER,
+  SUCCESS_CREATE_NEW_POST,
   FAILURE
 } from "../actions/actions";
 
@@ -14,6 +16,7 @@ const initialState = {
   userPostsLoaded: false,
   gettingPosts: false,
   gettingUsers: false,
+  creatingPost: false,
   error: null
 };
 
@@ -26,18 +29,25 @@ export default (state = initialState, action) => {
         userPostsLoaded: false,
         error: null
       };
-    case GET_ALL_USERS:
+    case CREATE_NEW_POST:
       return {
         ...state,
-        gettingUsers: true,
-        error: null
-      };
+        creatingPost: true,
+        userPostsLoaded: false,
+        error: null,
+      }
     case GET_POSTS_BY_USER:
       return {
         ...state,
         gettingUsers: true,
         userPostsLoaded: true,
         error: null,
+      };
+    case GET_ALL_USERS:
+      return {
+        ...state,
+        gettingUsers: true,
+        error: null
       };
     case SUCCESS_GET_ALL_POSTS:
       return {
@@ -46,6 +56,11 @@ export default (state = initialState, action) => {
         gettingPosts: false,
         error: null
       };
+    case SUCCESS_CREATE_NEW_POST:
+      return {
+        ...state,
+        creatingPost: false,
+      }
     case SUCCESS_GET_ALL_USERS:
       return {
         ...state,
@@ -65,6 +80,7 @@ export default (state = initialState, action) => {
         ...state,
         gettingPosts: false,
         gettingUsers: false,
+        creatingPost: false,
         error: action.payload
       };
     default:
