@@ -47,14 +47,33 @@ const CreateNewPost = props => {
     setInputText(e.target.value);
   };
 
-  const handleSubmit = (text, name) => {
+  const handleSubmit = () => {
     return e => {
       e.preventDefault();
 
-      alert(`${name} says ${text}`);
+      if (currentName && currentText) {
+        let upperCaseArray = [];
 
-      setInputName("");
-      setInputText("");
+        for (let name of currentName.split(" ")) {
+          upperCaseArray.push(name.charAt(0).toUpperCase() + name.slice(1));
+        }
+
+        let foundCharacterArray = props.userList.filter(user => user.name === upperCaseArray.join(' '));
+
+        if (foundCharacterArray.length) {
+          props.createNewPost({"user_id": foundCharacterArray[0].id , "text": currentText})
+                  
+          setInputName("");
+          setInputText("");
+
+          alert("New quote successfully added! Search for the character name or scroll down to see it.")
+        } else {
+          alert("This character name does not exist.")
+        } 
+      } else {
+        alert("Please do not leave any blank fields.");
+      }
+
       // const stateCopy = {...this.state};
       
       // this.props.updateSmurf(id, stateCopy)
@@ -72,12 +91,12 @@ const CreateNewPost = props => {
   return (
     <Dropdown isOpen={dropdownOpen} toggle={() => dropdownToggle(!dropdownOpen)}>
       <DropdownToggle color="success" className="quote-dropdown" caret>
-        Add New Quote
+        NEW QUOTE
       </DropdownToggle>
       <DropdownMenu className='quote-menu' >
         <Form
           className="quote-form"
-          onSubmit={handleSubmit(currentText,currentName)}
+          onSubmit={handleSubmit()}
         >
           <Label className="quote-label">
             Character Name:
@@ -91,7 +110,7 @@ const CreateNewPost = props => {
             />
           </Label>
           <Label className="quote-label">
-            Text:
+            Quote:
             <Input
               className="quote-input"
               type="textarea"

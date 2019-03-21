@@ -59,6 +59,7 @@ export default (state = initialState, action) => {
     case SUCCESS_CREATE_NEW_POST:
       return {
         ...state,
+        posts: [...state.posts, action.payload],
         creatingPost: false,
       }
     case SUCCESS_GET_ALL_USERS:

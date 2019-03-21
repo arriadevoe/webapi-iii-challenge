@@ -15,7 +15,7 @@ const port = 4000;
 export const createNewPost = postData => dispatch => {
   dispatch ({ type: CREATE_NEW_POST });
   axios
-    .post(`http://localhost:${port}/posts`, postData)
+    .post(`http://localhost:${port}/api/posts`, postData)
     .then(res => {
       dispatch({ 
         type: SUCCESS_CREATE_NEW_POST, 
