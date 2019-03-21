@@ -42,7 +42,7 @@ const CreateNewPost = props => {
   // };
 
   return (
-    <div>add new posts</div>
+    <button>add new posts</button>
   );
 };
 
