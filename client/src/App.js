@@ -7,6 +7,7 @@ import gollum from '../src/imgs/gollum.png';
 import './App.css';
 
 import SearchByAuthor from './components/SearchByAuthor';
+import CreateNewPost from './components/CreateNewPost';
 import Posts from './components/Posts';
 
 class App extends Component {
@@ -26,10 +27,11 @@ class App extends Component {
             <img src={redux} className="redux-logo" alt="gollum" />
             <img src={nodejs} className="nodejs-logo" alt="gollum" />
           </div>
-          <SearchByAuthor />
           <div className="component-container">
-            <Posts />
+            <SearchByAuthor />
+            <CreateNewPost />
           </div>
+          <Posts />
         </header>
       </div>
     );
