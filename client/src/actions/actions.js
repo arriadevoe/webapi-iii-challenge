@@ -6,10 +6,12 @@ export const SUCCESS_POSTS = 'SUCCESS_POSTS';
 export const SUCCESS_USERS = 'SUCCESS_USERS';
 export const FAILURE = 'FAILURE';
 
+const port = 4000;
+
 export const getAllPosts = () => dispatch => {
   dispatch ({ type: GET_ALL_POSTS });
   axios
-    .get('http://localhost:5000/api/posts')
+    .get(`http://localhost:${port}/api/posts`)
     .then(res => {
       dispatch({ 
         type: SUCCESS_POSTS, 
@@ -27,7 +29,7 @@ export const getAllPosts = () => dispatch => {
 export const getAllUsers = () => dispatch => {
   dispatch ({ type: GET_ALL_USERS });
   axios
-    .get('http://localhost:5000/api/users')
+    .get(`http://localhost:${port}/api/users`)
     .then(res => {
       dispatch({ 
         type: SUCCESS_USERS, 
