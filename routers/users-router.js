@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
 });
 
 // Retrieve the list of `posts` for a `user`.
-router.get("/posts/:id", async (req, res) => {
+router.get("/:id/posts", async (req, res) => {
   try {
     const posts = await usersDb.getUserPosts(req.params.id); // returns posts found for user
     if (!posts.length) {

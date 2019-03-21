@@ -1,8 +1,10 @@
 import {
   GET_ALL_POSTS,
   GET_ALL_USERS,
-  SUCCESS_POSTS,
-  SUCCESS_USERS,
+  GET_POSTS_BY_USER,
+  SUCCESS_GET_ALL_POSTS,
+  SUCCESS_GET_ALL_USERS,
+  SUCCESS_GET_POSTS_BY_USER,
   FAILURE,
 } from '../actions/actions';
 
@@ -28,14 +30,14 @@ export default (state = initialState, action) => {
         gettingUsers: true,
         error: null,
       }
-    case SUCCESS_POSTS:
+    case SUCCESS_GET_ALL_POSTS:
       return {
         ...state,
         posts: action.payload,
         gettingPosts: false,
         error: null,
       }
-    case SUCCESS_USERS:
+    case SUCCESS_GET_ALL_USERS:
       return {
         ...state,
         userList: action.payload,
