@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Posts from './components/blog/Posts';
+import Posts from './components/Posts';
+import UserList from './components/UserList';
+
 
 class App extends Component {
   render() {
@@ -16,6 +18,7 @@ class App extends Component {
               </p>
             </div>
           <Posts />
+          <UserList />
         </header>
       </div>
     );

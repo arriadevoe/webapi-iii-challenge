@@ -21,3 +21,21 @@ export const getAllPosts = () => dispatch => {
       })
     })
 }
+
+export const getAllUsers = () => dispatch => {
+  dispatch ({ type: GET_ALL_USERS });
+  axios
+    .get('http://localhost:5000/api/posts/users')
+    .then(res => {
+      dispatch({ 
+        type: SUCCESS, 
+        payload: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: FAILURE,
+        payload: err.response
+      })
+    })
+}
