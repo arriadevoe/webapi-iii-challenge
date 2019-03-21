@@ -11,6 +11,7 @@ import {
 const initialState = {
   posts: [],
   userList: [],
+  userPostsLoaded: false,
   gettingPosts: false,
   gettingUsers: false,
   error: null
@@ -22,6 +23,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         gettingPosts: true,
+        userPostsLoaded: false,
         error: null
       };
     case GET_ALL_USERS:
@@ -34,6 +36,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         gettingUsers: true,
+        userPostsLoaded: true,
         error: null,
       };
     case SUCCESS_GET_ALL_POSTS:

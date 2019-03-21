@@ -15,7 +15,23 @@ class Posts extends Component {
   render() {
     if (this.props.gettingPosts || this.props.gettingUsers) {
       return <Loader type="Puff" color="white" height={80} width={80} />;
+    } else if (this.props.userPostsLoaded) {
+      return (
+        <div className="posts">
+          {this.props.posts.map(post => {
+            return (
+              <div key={post.id} className="post">
+                <p className="quote">{`"${post.text}"`}</p>
+                <p className="author">
+                  {`-${post.postedBy}`}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      );
     }
+
     return (
       <div className="posts">
         {this.props.posts.map(post => {
@@ -41,6 +57,7 @@ const mapStateToProps = state => {
   return {
     posts: state.posts,
     userList: state.userList,
+    userPostsLoaded: state.userPostsLoaded,
     gettingPosts: state.gettingPosts,
     gettingUsers: state.gettingUsers,
     error: state.error
