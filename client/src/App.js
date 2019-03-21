@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import logo from '../src/imgs/logo.svg';
+import react from '../src/imgs/logo.svg';
+import redux from '../src/imgs/redux.png';
+import nodejs from '../src/imgs/nodejs.png';
 import gollum from '../src/imgs/gollum.png';
 import './App.css';
 
@@ -16,9 +18,11 @@ class App extends Component {
               Riddles in the Dark
             </h1>
           </div>
-          <div className="react-powered">
+          <div className="powered-by">
             <p>Powered By:</p>
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={react} className="react-logo" alt="logo" />
+            <img src={redux} className="redux-logo" alt="gollum" />
+            <img src={nodejs} className="nodejs-logo" alt="gollum" />
           </div>
           <div className="component-container">
             <Posts />

@@ -2,18 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 15vmin;
-  pointer-events: none;
-}
-
-.gollum {
-  /* animation: App-logo-spin infinite 20s linear; */
-  height: 30vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -30,11 +18,37 @@
   align-items: center;
   font-size: calc(14px + 2vmin);
   font-weight: bold;
+  height: 100px;
+  margin-top: 50px;
 }
 
-.react-powered {
+.gollum {
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 25vmin;
+  pointer-events: none;
+  margin-right: 15px;
+}
+
+.powered-by {
   display: flex;
   align-items: center;
+  padding-left: 10px;
+}
+
+.react-logo {
+  height: 12vmin;
+  pointer-events: none;
+}
+
+.redux-logo {
+  height: 9vmin;
+  pointer-events: none;
+  margin-right: 25px;
+}
+
+.nodejs-logo {
+  height: 10vmin;
+  pointer-events: none;
 }
 
 .component-container {
