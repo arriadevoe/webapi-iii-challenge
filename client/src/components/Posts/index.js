@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getAllPosts, getAllUsers } from "../../actions/actions";
 
 import "./Posts.css";
+import Loader from 'react-loader-spinner';
 
 class Posts extends Component {
   componentDidMount() {
@@ -13,7 +14,7 @@ class Posts extends Component {
 
   render() {
     if (this.props.gettingPosts || this.props.gettingUsers) {
-      return <p>loading</p>
+      return <Loader type="Puff" color="white" height={80} width={80} />
     }
     return (
       <div className="posts">
