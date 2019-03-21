@@ -1,8 +1,13 @@
+.user-list p {
+  border-bottom: 5px double white;
+  padding-bottom: 5px;
+  margin: 0;
+  font-size: 30px;
+}
+
 .users {
-  border: 5px groove white;
-  padding: 10px 30px;
+  padding: 0 10px;
   list-style-position: inside;
-  overflow-y: scroll;
   max-height: 290px;
   display: flex;
   flex-direction: column;
@@ -11,6 +16,7 @@
 
 .users:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .user {

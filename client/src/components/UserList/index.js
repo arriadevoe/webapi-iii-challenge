@@ -12,15 +12,18 @@ class UserList extends Component {
 
   render() {
     return (
-      <ul className="users">
-        {this.props.userList.map(user => {
-          return (
-            <li key={user.id} className="user">
-              {user.name}
-            </li>
-          );
-        })}
-      </ul>
+      <div className="user-list">
+        <p>Authors:</p>
+        <ul className="users">
+          {this.props.userList.map(user => {
+            return (
+              <li key={user.id} className="user">
+                {user.name}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     );
   }
 }
