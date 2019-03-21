@@ -3,8 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 
 import Posts from './components/Posts';
-import UserList from './components/UserList';
-
 
 class App extends Component {
   render() {
@@ -19,7 +17,6 @@ class App extends Component {
           </div>
           <div className="component-container">
             <Posts />
-            <UserList />
           </div>
         </header>
       </div>

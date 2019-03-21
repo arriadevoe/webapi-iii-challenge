@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { getAllPosts } from "../../actions/actions";
+import { getAllPosts, getAllUsers } from "../../actions/actions";
 
 import "./Posts.css";
 
 class Posts extends Component {
   componentDidMount() {
     this.props.getAllPosts();
+    this.props.getAllUsers();
   }
 
   render() {
@@ -45,5 +46,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getAllPosts }
+  { getAllPosts, getAllUsers }
 )(Posts);
