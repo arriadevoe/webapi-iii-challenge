@@ -44,3 +44,7 @@
   font-size: 1.6rem;
   margin: 0 auto;
 }
+
+.quote-btn:hover {
+  border: 1px solid white;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
-import { createNewPost } from "../../actions/actions";
+import { createNewPost, getPostsByUser } from "../../actions/actions";
 
 import { DropdownMenu, DropdownToggle, Dropdown, Form, Label, Input, Button } from "reactstrap";
 import "./CreateNewPost.css";
@@ -61,12 +61,11 @@ const CreateNewPost = props => {
         let foundCharacterArray = props.userList.filter(user => user.name === upperCaseArray.join(' '));
 
         if (foundCharacterArray.length) {
-          props.createNewPost({"user_id": foundCharacterArray[0].id , "text": currentText})
+          props.createNewPost({"user_id": foundCharacterArray[0].id , "text": currentText});
+          props.getPostsByUser(foundCharacterArray[0].id);
                   
           setInputName("");
           setInputText("");
-
-          alert("New quote successfully added! Search for the character name or scroll down to see it.")
         } else {
           alert("This character name does not exist.")
         } 
@@ -138,5 +137,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { createNewPost }
+  { createNewPost, getPostsByUser }
 )(CreateNewPost);

@@ -61,6 +61,7 @@ export default (state = initialState, action) => {
         ...state,
         posts: [...state.posts, action.payload],
         creatingPost: false,
+        error: null,
       }
     case SUCCESS_GET_ALL_USERS:
       return {
