@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-export const GET_ALL_POSTS = 'FETCHING';
+export const GET_ALL_POSTS = 'GET_ALL_POSTS';
+export const GET_ALL_USERS = 'GET_ALL_USERS';
 export const SUCCESS = 'SUCCESS';
 export const FAILURE = 'FAILURE';
 
@@ -25,7 +26,7 @@ export const getAllPosts = () => dispatch => {
 export const getAllUsers = () => dispatch => {
   dispatch ({ type: GET_ALL_USERS });
   axios
-    .get('http://localhost:5000/api/posts/users')
+    .get('http://localhost:5000/api/users')
     .then(res => {
       dispatch({ 
         type: SUCCESS, 
