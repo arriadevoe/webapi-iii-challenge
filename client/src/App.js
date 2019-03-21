@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '../src/imgs/logo.svg';
+import gollum from '../src/imgs/gollum.png';
 import './App.css';
 
 import Posts from './components/Posts';
@@ -10,10 +11,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <div className="title">
+            <img src={gollum} className="gollum" alt="gollum" />
+            <h1>
+              Riddles in the Dark
+            </h1>
+          </div>
+          <div className="react-powered">
+            <p>Powered By:</p>
             <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              WEB API III Challenge - Blog with Node.js
-            </p>
           </div>
           <div className="component-container">
             <Posts />

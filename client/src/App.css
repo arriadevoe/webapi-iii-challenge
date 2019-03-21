@@ -4,6 +4,12 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
+  height: 15vmin;
+  pointer-events: none;
+}
+
+.gollum {
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 30vmin;
   pointer-events: none;
 }
@@ -24,6 +30,11 @@
   align-items: center;
   font-size: calc(14px + 2vmin);
   font-weight: bold;
+}
+
+.react-powered {
+  display: flex;
+  align-items: center;
 }
 
 .component-container {
