@@ -16,6 +16,27 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Creates a post using the information sent inside the `request body`.
+router.post("/", async (req, res) => {
+  try {
+    if (!req.body.text || !req.body.user_id) {
+      res.status(400).json({
+        errorMessage: "Please provide text and user id for the post."
+      });
+    } else {
+      const newPost = await postsDb.insert(req.body);
+      res.status(201).json(newPost);
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      error: "There was an error while saving the post to the database."
+    });
+  }
+});
+
+// CODE BELOW FOR REFERENCE ONLY
+
 // // Endpoints: Handle all URLs beginning with /api/posts
 // // Creates a post using the information sent inside the `request body`.
 // router.post("/", async (req, res) => {

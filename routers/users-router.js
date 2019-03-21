@@ -91,6 +91,8 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// CODE BELOW FOR REFERENCE ONLY
+
 // // Endpoints: Handle all URLs beginning with /api/posts
 // // Creates a post using the information sent inside the `request body`.
 // router.post("/", async (req, res) => {
