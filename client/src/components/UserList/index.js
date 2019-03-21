@@ -27,7 +27,7 @@ class UserList extends Component {
 
 const mapStateToProps = state => {
   return {
-    userList: state.userLists,
+    userList: state.userList,
     gettingUsers: state.gettingUsers,
     error: state.error
   };
