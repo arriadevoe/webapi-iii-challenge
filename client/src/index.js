@@ -12,6 +12,8 @@ import logger from 'redux-logger';
 
 import rootReducer from './reducers/blogReducers';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const store = createStore(
   rootReducer,
   applyMiddleware(thunk, logger),
