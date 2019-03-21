@@ -1,19 +1,20 @@
-form {
+.search-form {
   display: flex;
 }
 
-input {
+.search-input {
   width: 300px;
   padding: 8px 0;
   padding-left: 10px;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   border-radius: 2px;
   background: white;
   margin-right: 15px;
+  color: black;
 }
 
-button {
+.search-btn {
   background: #606060;
   border: 1px solid white;
   color: white;
@@ -22,8 +23,9 @@ button {
   transition: 0.15s;
   margin-right: 15px;
   border-radius: 2px;
+  font-size: 1.6rem;
 }
 
-button:hover {
+.search-btn:hover {
   background: darkslategrey;
 }

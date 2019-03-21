@@ -22,19 +22,21 @@ const SearchByAuthor = props => {
         upperCaseArray.push(name.charAt(0).toUpperCase() + name.slice(1));
       }
 
-      let foundCharacterArray = props.userList.filter(user => user.name === upperCaseArray.join(' '));
+      let foundCharacterArray = props.userList.filter(
+        user => user.name === upperCaseArray.join(" ")
+      );
 
       if (foundCharacterArray.length) {
         props.getPostsByUser(foundCharacterArray[0].id);
       } else {
-        alert ("No character with this name exists.")
-      } setInputState("");
-
+        alert("No character with this name exists.");
+      }
+      setInputState("");
     } else {
       alert("Please enter a character name.");
     }
   };
-  
+
   const viewAll = e => {
     e.preventDefault();
 
@@ -42,15 +44,20 @@ const SearchByAuthor = props => {
   };
 
   return (
-    <form>
+    <form className="search-form">
       <input
+        className="search-input"
         type="text"
         value={currentInputState}
         onChange={handleInputChange}
         placeholder="...Search by Character Name"
       />
-      <button type="submit" onClick={filterByAuthor}> SEARCH </button>
-      <button onClick={viewAll}> VIEW ALL </button>
+      <button className="search-btn" type="submit" onClick={filterByAuthor}>
+        SEARCH
+      </button>
+      <button className="search-btn" onClick={viewAll}>
+        VIEW ALL
+      </button>
     </form>
   );
 };

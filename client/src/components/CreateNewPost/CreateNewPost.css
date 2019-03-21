@@ -1,0 +1,45 @@
+.quote-dropdown {
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 8px 20px;
+  border: 1px solid white;
+}
+
+.quote-dropdown:hover {
+  border: 1px solid white;
+}
+
+.quote-menu {
+  box-shadow: 5px 5px 0 gray;
+  background: whitesmoke;
+}
+
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-width: 400px;
+  min-height: 250px;
+}
+
+.quote-label {
+  color: black;
+}
+
+.quote-input {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.quote-btn {
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 5px 20px;
+  transition: 0.15s;
+  margin-right: 15px;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  margin: 0 auto;
+}
