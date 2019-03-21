@@ -27,11 +27,11 @@ const SearchByAuthor = props => {
       if (foundCharacterArray.length) {
         props.getPostsByUser(foundCharacterArray[0].id);
       } else {
-        alert ("No character with this name exists")
+        alert ("No character with this name exists.")
       } setInputState("");
 
     } else {
-      alert("Don't leave this blank");
+      alert("Please enter a character name.");
     }
   };
   
