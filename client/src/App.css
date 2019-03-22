@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.gollum {
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 180px;
+  pointer-events: none;
+  margin-right: 15px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  margin-top: 60px;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.powered-by {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.react-logo {
+  height: 60px;
+  pointer-events: none;
+  margin-right: 5px;
+}
+
+.redux-logo {
+  height: 45px;
+  pointer-events: none;
+  margin-right: 22px;
+}
+
+.nodejs-logo {
+  height: 50px;
+  pointer-events: none;
+}
+
+.component-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

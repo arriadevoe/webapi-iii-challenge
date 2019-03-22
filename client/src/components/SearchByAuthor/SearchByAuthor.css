@@ -1,0 +1,31 @@
+.search-form {
+  display: flex;
+}
+
+.search-input {
+  width: 300px;
+  padding: 8px 0;
+  padding-left: 10px;
+  border: none;
+  font-size: 1.6rem;
+  border-radius: 2px;
+  background: white;
+  margin-right: 15px;
+  color: black;
+}
+
+.search-btn {
+  background: #606060;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 0 20px;
+  transition: 0.15s;
+  margin-right: 15px;
+  border-radius: 2px;
+  font-size: 1.6rem;
+}
+
+.search-btn:hover {
+  background: #404040;
+}
