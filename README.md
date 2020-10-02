@@ -2,28 +2,6 @@
 
 In this challenge, you will **design** and build an API that satisfies the requirements listed under the `Minimum Viable Product` section.
 
-## Instructions
-
-**Read these instructions carefully. Understand exactly what is expected before starting.**
-
-You are allowed, and **encouraged**, to collaborate with other peers. Please follow the twenty-minute rule, before seeking support from your PM and Instructor.
-
-## Project Set Up
-
-- [X] Create a forked copy of this project.
-- [X] Add your project manager as collaborator on Github.
-- [X] Clone your OWN version of the repository.
-- [X] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [X] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [X] Push commits: git push origin `<firstName-lastName>`.
-
-Follow these steps for completing your project.
-
-- [X] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
-- [X] Add your project manager as a reviewer on the pull-request
-- [X] Your project manager will count the project as complete by merging the branch back into master.
-- [X] Do your magic!
-
 ## Minimum Viable Product
 
 1. Build an API to let clients perform CRUD operations on `users` and `posts`.
@@ -42,8 +20,6 @@ The `/data/helpers` folder includes helper files that you can use to manage the 
 - `remove()`: the remove method accepts an `id` as it's first parameter and, upon successfully deleting the `resource` from the database, returns the number of records deleted.
 
 The `userDb.js` helper includes an extra method called `getUserPosts()` that when passed a user's `id`, returns a list of all the `posts` for the `user`.
-
-**All helper methods return a promise.**
 
 #### Database Schemas
 
