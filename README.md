@@ -1,6 +1,4 @@
-# Building an API using a Node.js and Express
-
-In this challenge, you will **design** and build an API that satisfies the requirements listed under the `Minimum Viable Product` section.
+# Building an API using Node.js and Express
 
 ## Minimum Viable Product
 
@@ -8,6 +6,17 @@ In this challenge, you will **design** and build an API that satisfies the requi
 1. Add an endpoint to retrieve the list of `posts` for a `user`.
 1. Write custom `middleware` to ensure that the user's `name` is upper-cased before the request reaches the `POST` or `PUT` _route handlers_.
 1. Use `Express Routers` to organize the endpoints. You can optionally move and rename `postDb.js` and `userDb.js` to place it next to the corresponding router.
+
+## Technology Used
+
+- Node.js
+- Express
+- Knex
+- SQLite3
+- React
+- Axios
+- Reactstrap
+- Redux
 
 ### Database Persistence Helpers
 
